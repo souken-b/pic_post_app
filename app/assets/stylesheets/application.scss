@@ -54,3 +54,13 @@ margin-bottom: 20px;
 border-top-left-radius: 0;
 border-top-right-radius: 0;
 }
+
+.reset_password_main {
+    @extend .register_main 
+}
+
+.reset_password_main input[type="email"] {
+    margin-bottom: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}

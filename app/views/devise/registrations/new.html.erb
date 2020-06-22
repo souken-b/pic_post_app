@@ -7,14 +7,14 @@
         <%= f.text_field :name, :placeholder => "ユーザーネーム", class: "form-control" %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "メールアドレス", class: "form-control" %>
         <%= f.password_field :password, autocomplete: "new-password", :placeholder => "パスワード", class: "form-control" %>
-        <%= f.submit "Sign up", class: "btn btn-md btn-primary btn-block" %>
+        <%= f.submit "アカウント作成", class: "btn btn-md btn-primary btn-block" %>
       <% end %>
-      <%= button_to  "キャンセル", new_session_path(resource_name), class: "btn btn-md btn-primary btn-block mt-1" %>
+      <%= button_to  "ログインへ", new_session_path(resource_name), class: "btn btn-md btn-primary btn-block mt-2" %>
     </div>
   </div>
 </div>
 
-
+
         <%
 =begin%>
  <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "パスワード確認用" %>  
