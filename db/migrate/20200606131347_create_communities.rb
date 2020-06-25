@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 class CreateCommunities < ActiveRecord::Migration[6.0]
   def change
     create_table :communities do |t|
-      t.string :name 
-      t.integer :user_id
+      t.string :name
       t.timestamps
     end
   end
