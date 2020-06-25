@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Post < ApplicationRecord
-  belongs_to :reports
+  belongs_to :user, dependent: :destroy
 end
