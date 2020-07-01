@@ -1,9 +1,8 @@
 <div class="community">
 <%= link_to "マイページへ", user_path(current_user) %>
-<%= link_to "コミュニティの作成", new_community_path %>
 <ul>
   <% @communities.each do |community| %>
-    <li><%= community.name %></li>
+    <li><%= link_to community.name, posts_path(community) %></li>
   <% end %>
 </ul>
 </div>

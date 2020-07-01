@@ -1,0 +1,5 @@
+<% @communities.each do |community| %>
+<ul>
+  <li><%= link_to community.name, edit_community_path %></li>
+</ul>
+<% end %>
