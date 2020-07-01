@@ -1,0 +1,7 @@
+<div class="community">
+    <%= form_with model: @community, url: community_path, local: true do |f| %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.text_field :name %>
+      <%= f.submit %>
+    <% end %>
+</div>

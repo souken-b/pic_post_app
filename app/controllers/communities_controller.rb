@@ -6,6 +6,10 @@ class CommunitiesController < ApplicationController
     @communities = Community.all
   end
 
+  def index_my
+    @communities = Community.where(user_id: current_user.id)
+  end
+
   def new
     @community = Community.new
   end
@@ -13,6 +17,15 @@ class CommunitiesController < ApplicationController
   def create
     Community.create!(community_params)
     redirect_to communities_path
+  end
+
+  def edit
+    @community = Community.find(params[:id])
+  end
+
+  def update
+    community = Community.find(params[:id])
+    community.update(community_params)
   end
 
   private

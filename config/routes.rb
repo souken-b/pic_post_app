@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Route Map
 #
 #                                Prefix Verb   URI Pattern                                                                              Controller#Action
@@ -25,14 +27,14 @@
 #                                       PATCH  /users/:id(.:format)                                                                     users#update
 #                                       PUT    /users/:id(.:format)                                                                     users#update
 #                                       DELETE /users/:id(.:format)                                                                     users#destroy
-#                               reports GET    /reports(.:format)                                                                       reports#index
-#                                       POST   /reports(.:format)                                                                       reports#create
-#                            new_report GET    /reports/new(.:format)                                                                   reports#new
-#                           edit_report GET    /reports/:id/edit(.:format)                                                              reports#edit
-#                                report GET    /reports/:id(.:format)                                                                   reports#show
-#                                       PATCH  /reports/:id(.:format)                                                                   reports#update
-#                                       PUT    /reports/:id(.:format)                                                                   reports#update
-#                                       DELETE /reports/:id(.:format)                                                                   reports#destroy
+#                                 posts GET    /posts(.:format)                                                                         posts#index
+#                                       POST   /posts(.:format)                                                                         posts#create
+#                              new_post GET    /posts/new(.:format)                                                                     posts#new
+#                             edit_post GET    /posts/:id/edit(.:format)                                                                posts#edit
+#                                  post GET    /posts/:id(.:format)                                                                     posts#show
+#                                       PATCH  /posts/:id(.:format)                                                                     posts#update
+#                                       PUT    /posts/:id(.:format)                                                                     posts#update
+#                                       DELETE /posts/:id(.:format)                                                                     posts#destroy
 #                           communities GET    /communities(.:format)                                                                   communities#index
 #                                       POST   /communities(.:format)                                                                   communities#create
 #                         new_community GET    /communities/new(.:format)                                                               communities#new
@@ -65,8 +67,10 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root to: "communities#index"
+  root to: 'communities#index'
   resources :users
-  resources :reports
-  resources :communities
+  resources :posts
+  resources :communities do
+    get 'index_my', on: :member
+  end
 end
