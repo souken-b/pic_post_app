@@ -35,6 +35,7 @@
 #                                       PATCH  /posts/:id(.:format)                                                                     posts#update
 #                                       PUT    /posts/:id(.:format)                                                                     posts#update
 #                                       DELETE /posts/:id(.:format)                                                                     posts#destroy
+#                    index_my_community GET    /communities/:id/index_my(.:format)                                                      communities#index_my
 #                           communities GET    /communities(.:format)                                                                   communities#index
 #                                       POST   /communities(.:format)                                                                   communities#create
 #                         new_community GET    /communities/new(.:format)                                                               communities#new
