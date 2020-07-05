@@ -2,7 +2,7 @@
 <%= link_to "マイページへ", user_path(current_user) %>
 <ul>
   <% @communities.each do |community| %>
-    <li><%= link_to community.name, posts_path(community) %></li>
+    <li><%= link_to community.name, posts_path %></li>
   <% end %>
 </ul>
 </div>
