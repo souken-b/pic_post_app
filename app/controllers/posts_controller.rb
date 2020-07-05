@@ -5,9 +5,18 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def new
+    @post = Post.new
+  end
+
+  def create
+    Post.create!(post_params)
+    redirect_to posts_path
+  end
+
   private
 
   def post_params
-    params.require(:posts).permit(:message, :user_id)
+    params.require(:post).permit(:message, :user_id)
   end
 end

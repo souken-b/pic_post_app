@@ -26,6 +26,7 @@ class CommunitiesController < ApplicationController
   def update
     community = Community.find(params[:id])
     community.update(community_params)
+    redirect_to index_my_community_path
   end
 
   private
