@@ -40,9 +40,13 @@ User.all.each do |user|
       user_id: user.id,
       name: "#{user.name}-#{i}"
     )
-    user.posts.create!(
+  end
+
+  Community.all.each do |community|
+    community.posts.create!(
       user_id: user.id,
-      message: "#{user.name}'s post#{i}"
+      community_id: community.id,
+      message: "#{user.name}'s post#{community.id}"
     )
   end
 end
