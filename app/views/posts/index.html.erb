@@ -1,8 +1,9 @@
-<%= link_to  "投稿", new_post_path %>
+<h1>投稿の一覧</h1>
+<%= link_to  "投稿する", new_post_path %>
 <ul>
 <% @posts.each do |post| %>
   <% if current_user.id == post.user_id %>
-    <li><%= link_to post.message, edit_post_path(post) %></li>
+    <li><%= link_to post.message, post_path(post) %></li>
   <% else %>
     <li><%= post.message %></li>
   <% end %>

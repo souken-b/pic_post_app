@@ -1,5 +1,5 @@
 <div class="community">
-<%= link_to "マイページへ", user_path(current_user) %>
+<h1>コミュニティの一覧画面</h1>
 <ul>
   <% @communities.each do |community| %>
     <li><%= link_to community.name, posts_path %></li>
